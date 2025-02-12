@@ -2,15 +2,59 @@
 <html>
   <head>
     <title>Chess Move Suggester</title>
-    <link href="../src/index.css" rel="stylesheet" />
+    <style>
+      body {
+        width: 256px;
+        padding: 16px;
+        background: white;
+        color: black;
+      }
+      h1 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+      .space-y-4 > * + * {
+        margin-top: 16px;
+      }
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: white;
+      }
+      #position,
+      #suggestion {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      #position {
+        background: #f5f5f5;
+        font-family: monospace;
+      }
+      #suggestion {
+        background: #000;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
   </head>
-  <body class="w-64 p-4 bg-background text-foreground">
-    <h1 class="text-lg font-bold mb-4">Chess Move Suggester</h1>
+  <body>
+    <h1>Chess Move Suggester</h1>
 
     <div class="space-y-4">
       <div>
-        <label class="block text-sm font-medium mb-1">Depth Level</label>
-        <select id="depth" class="w-full p-2 border rounded bg-background">
+        <label>Depth Level</label>
+        <select id="depth">
           <option value="10">Easy (Depth 10)</option>
           <option value="15">Medium (Depth 15)</option>
           <option value="20">Hard (Depth 20)</option>
@@ -18,23 +62,13 @@
       </div>
 
       <div>
-        <label class="block text-sm font-medium mb-1">Current Position</label>
-        <div
-          id="position"
-          class="p-2 border rounded bg-muted text-sm font-mono"
-        >
-          Waiting...
-        </div>
+        <label>Current Position</label>
+        <div id="position">Waiting...</div>
       </div>
 
       <div>
-        <label class="block text-sm font-medium mb-1">Suggested Move</label>
-        <div
-          id="suggestion"
-          class="p-2 border rounded bg-primary text-primary-foreground font-bold"
-        >
-          Analyzing...
-        </div>
+        <label>Suggested Move</label>
+        <div id="suggestion">Analyzing...</div>
       </div>
     </div>
 

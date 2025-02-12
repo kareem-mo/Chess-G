@@ -18,10 +18,11 @@ export default defineConfig({
         main: "index.html",
         content: "src/extension/content.ts",
         background: "src/extension/background.ts",
-        popup: "src/extension/popup.ts",
+        popup: "public/popup.html",
       },
       output: {
         entryFileNames: "[name].js",
+        assetFileNames: "[name].[ext]",
         dir: "dist",
       },
     },
