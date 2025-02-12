@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node copy-extension-files.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -40,11 +40,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.4",
-    "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.2",
     "lucide-react": "^0.475.0",
     "react": "^18.2.0",
-    "react-day-picker": "^9.5.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.54.2",
     "react-resizable-panels": "^2.1.7",

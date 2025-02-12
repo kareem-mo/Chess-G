@@ -18,6 +18,7 @@ export default defineConfig({
         content: "src/extension/content.ts",
         background: "src/extension/background.ts",
         popup: "src/extension/popup.ts",
+        main: "index.html",
       },
       output: {
         entryFileNames: "[name].js",
