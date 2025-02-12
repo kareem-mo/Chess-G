@@ -15,17 +15,19 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: "index.html",
         content: "src/extension/content.ts",
         background: "src/extension/background.ts",
-        popup: "public/popup.html",
+        popup: "src/extension/popup.ts",
       },
       output: {
         entryFileNames: "[name].js",
         assetFileNames: "[name].[ext]",
+        chunkFileNames: "[name].js",
         dir: "dist",
       },
     },
+    target: "esnext",
+    minify: false,
   },
   base:
     process.env.NODE_ENV === "development"
